@@ -6,7 +6,7 @@ public class GameLogic {
 	 */
 	
 	// ATTRIBUTES
-	private Player player1, player2, winner;
+	private Player player1, player2, winner, turn;
 	private GameBoard gameBoard;
 	
 	// CONSTRUCTOR
@@ -16,6 +16,7 @@ public class GameLogic {
 		this.player2 = p2;
 		this.winner = null;
 		this.gameBoard = gb;
+		this.turn = p1;
 
 	}
 	
