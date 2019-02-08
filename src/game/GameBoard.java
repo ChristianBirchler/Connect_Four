@@ -7,7 +7,7 @@ public class GameBoard {
 	 */
 	
 	// ATTRIBUTES
-	ArrayList<ArrayList<String>> table;
+	Player table[][];
 	private int xsize, ysize;
 	
 	// CONSTRUCTOR
@@ -16,6 +16,8 @@ public class GameBoard {
 		
 		this.xsize = xsize_;
 		this.ysize = ysize_;
+		
+		this.table = new Player[xsize_][ysize_];
 		
 	}
 	
