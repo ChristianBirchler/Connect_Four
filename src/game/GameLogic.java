@@ -1,6 +1,6 @@
 package game;
 
-public class GameLogic {
+public class GameLogic implements GameInterface {
 	/*
 	 * This class handles all the logic of the game.
 	 */
@@ -23,7 +23,11 @@ public class GameLogic {
 	
 	// METHODS
 	// -- Access
-	public Player getTurn() {
+	public void putAt(int pos) {
+		
+	}
+	
+	public Player getCurrentPlayer() {
 		return this.turn;
 	}
 	

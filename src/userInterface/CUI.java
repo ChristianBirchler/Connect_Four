@@ -13,8 +13,8 @@ public class CUI extends UI {
 	
 	
 	// CONSTRUCTOR
-	public CUI(GameLogic gl) {
-		super(gl);
+	public CUI(GameInterface gi) {
+		super(gi);
 	}
 	
 	// METHODS
@@ -27,7 +27,7 @@ public class CUI extends UI {
 		
 		// TODO add the current state to the printed table!
 		
-		GameBoard gb = this.gameLogic.getGameBoard();
+		GameBoard gb = this.game.getGameBoard();
 		int xsize = gb.getXsize();
 		int ysize = gb.getYsize();
 		
@@ -51,9 +51,9 @@ public class CUI extends UI {
 	
 	public void takeUserInput() {
 		int choice = -1;
-		Player currentTurn = this.gameLogic.getTurn();
+		Player currentPl = this.game.getCurrentPlayer();
 		
-		System.out.println(currentTurn + " enter a position: ");
+		System.out.println(currentPl + " enter a position: ");
 		choice = this.input();
 		
 		while(!this.validInput(choice)) {
@@ -69,7 +69,8 @@ public class CUI extends UI {
 	private int input() {
 		Scanner reader = new Scanner(System.in);  // Reading from System.in
 		int n = reader.nextInt(); // Scans the next token of the input as an int.
-	
+		//reader.close();
+		
 		return n;
 	}
 	
@@ -79,8 +80,8 @@ public class CUI extends UI {
 		 * If 0<'n'<=xsize then true else false.
 		 */
 		
-		int xsize = this.gameLogic.getGameBoard().getXsize();
-		GameBoard gb = this.gameLogic.getGameBoard();
+		int xsize = this.game.getGameBoard().getXsize();
+		GameBoard gb = this.game.getGameBoard();
 		
 		return 0<n && n<=xsize && !gb.isFullAt(n);
 	}

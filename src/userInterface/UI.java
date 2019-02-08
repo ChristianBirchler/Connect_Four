@@ -5,11 +5,11 @@ import java.util.Scanner;
 public abstract class UI {
 	
 	// ATTRIBUTES
-	protected GameLogic gameLogic;
+	protected GameInterface game;
 	
 	// CONSTRUCTORS
-	public UI(GameLogic gl) {
-		this.gameLogic = gl;
+	public UI(GameInterface gi) {
+		this.game = gi;
 	}
 	
 	// METHODS
