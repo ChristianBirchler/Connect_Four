@@ -23,6 +23,14 @@ public class GameLogic {
 	
 	// METHODS
 	// -- Access
+	public Player getTurn() {
+		return this.turn;
+	}
+	
+	public GameBoard getGameBoard() {
+		return this.gameBoard;
+	}
+	
 	public boolean hasWinner() {
 		return false; // TODO implement such that no infinite loop occur
 	}
