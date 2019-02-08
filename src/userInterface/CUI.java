@@ -24,6 +24,9 @@ public class CUI extends UI {
 		/*
 		 * This method prints the board into the console according to the current game state.
 		 */
+		
+		// TODO add the current state to the printed table!
+		
 		GameBoard gb = this.gameLogic.getGameBoard();
 		int xsize = gb.getXsize();
 		int ysize = gb.getYsize();
