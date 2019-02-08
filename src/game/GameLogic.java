@@ -24,11 +24,15 @@ public class GameLogic {
 	// METHODS
 	// -- Access
 	public boolean hasWinner() {
-		return this.winner != null;
+		return false; // TODO implement such that no infinite loop occur
 	}
 	
 	public Player getWinner() {
-		assert this.winner != null : "There is no winner so far!";
+		// PRECONDITIOM
+//		if(this.winner == null) {
+//			throw new NullPointerException("Winner is not properly set!");
+//		}
+		
 		return this.winner;
 	}
 	
