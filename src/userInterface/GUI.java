@@ -18,6 +18,16 @@ public class GUI extends UI {
 	// METHODS
 	// -- Access
 	public void printGameBoard() {
+		/*
+		 * This method updates the graphical view of the table according to the current state.
+		 */
+		
+		
+	}
+
+
+	public void takeUserInput() {
+		// TODO Auto-generated method stub
 		
 	}
 	
