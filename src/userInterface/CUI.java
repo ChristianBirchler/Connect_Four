@@ -1,4 +1,6 @@
 package userInterface;
+import java.util.Scanner;
+
 import game.*;
 
 public class CUI extends UI {
@@ -18,6 +20,27 @@ public class CUI extends UI {
 	// METHODS
 	// -- Access
 	public void printGameBoard() {
+	
+		/*
+		 * This method prints the board into the console according to the current game state.
+		 */
+		GameBoard gb = this.gameLogic.getGameBoard();
+		int xsize = gb.getXsize();
+		int ysize = gb.getYsize();
+		
+		for(int row=ysize;row>0;row--) {
+			System.out.print("|");
+			for(int col=0;col<xsize;col++) {
+				System.out.print("_|");
+			}
+			System.out.print("\n");
+		}
+		
+		for(int i=1;i<xsize+1;i++) {
+			System.out.print(" " + i);
+		}
+		
+		System.out.print("\n");
 		
 	}
 	
