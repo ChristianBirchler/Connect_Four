@@ -1,6 +1,7 @@
 package userInterface;
+import game.*;
 
-public class CUI implements UI {
+public class CUI extends UI {
 	/*
 	 * This class implements an user interface for the console.
 	 */
@@ -10,13 +11,13 @@ public class CUI implements UI {
 	
 	
 	// CONSTRUCTOR
-	public CUI() {
-		
+	public CUI(GameLogic gl) {
+		super(gl);
 	}
 	
 	// METHODS
 	// -- Access
-	public void update() {
+	public void printGameBoard() {
 		
 	}
 	

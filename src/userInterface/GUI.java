@@ -1,6 +1,7 @@
 package userInterface;
+import game.*;
 
-public class GUI implements UI {
+public class GUI extends UI {
 	/*
 	 * This class implements the functionality of the GUI.
 	 */
@@ -9,14 +10,14 @@ public class GUI implements UI {
 	
 	
 	// CONSTRUCTOR
-	public GUI() {
-		
+	public GUI(GameLogic gl) {
+		super(gl);
 	}
 	
 	
 	// METHODS
 	// -- Access
-	public void update() {
+	public void printGameBoard() {
 		
 	}
 	

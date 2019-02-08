@@ -20,6 +20,8 @@ public class Player {
 	
 	// METHODS
 	// -- Access
-	
+	public String toString() {
+		return this.name;
+	}
 
 }
