@@ -31,6 +31,25 @@ public class GameBoard {
 		return this.ysize;
 	}
 	
+	public void throwAt(Player pl, int pos) {
+		/*
+		 * Player 'pl' throws his chip at 'pos' into the board.
+		 */
+		
+		// PRECONDITION
+		if(this.isFullAt(pos)) {
+			throw new Error();
+		}
+		
+		int y = 0;
+		while(this.table[pos-1][y] != null) { // no need to check y<ysize since table at 'pos' is not full
+			y++;
+		}
+		
+		table[pos-1][y] = pl;
+		
+	}
+	
 	public boolean isFullAt(int pos) {
 		/*
 		 * Returns true iff GameBoard at position 'pos' is full. (first index is 1)
