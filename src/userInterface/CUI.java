@@ -10,7 +10,7 @@ public class CUI extends UI {
 	
 	
 	// ATTRIBUTES
-	
+	// TODO add symbols (chip representations) as attributes
 	
 	// CONSTRUCTOR
 	public CUI(GameInterface gi) {
@@ -27,9 +27,8 @@ public class CUI extends UI {
 		
 		// TODO add the current state to the printed table!
 		
-		GameBoard gb = this.game.getGameBoard();
-		int xsize = gb.getXsize();
-		int ysize = gb.getYsize();
+		int xsize = this.game.getXsize();
+		int ysize = this.game.getYsize();
 		
 		for(int row=ysize;row>0;row--) {
 			System.out.print("|");
@@ -57,11 +56,12 @@ public class CUI extends UI {
 		choice = this.input();
 		
 		while(!this.validInput(choice)) {
-			System.out.println("Invalid input!\nEnter a position: ");
+			System.out.println("Invalid input!\n" + currentPl + " enter a position: ");
 			choice = this.input();
 		}
 		
-		// TODO Do action according to the valid input.
+		// 'choice' is a valid position to throw a chip
+		this.game.putAt(choice);
 		
 	}
 	
@@ -80,10 +80,9 @@ public class CUI extends UI {
 		 * If 0<'n'<=xsize then true else false.
 		 */
 		
-		int xsize = this.game.getGameBoard().getXsize();
-		GameBoard gb = this.game.getGameBoard();
+		int xsize = this.game.getXsize();
 		
-		return 0<n && n<=xsize && !gb.isFullAt(n);
+		return 0<n && n<=xsize && !this.game.isFullAt(n);
 	}
 }
 
