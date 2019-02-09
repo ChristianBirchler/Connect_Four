@@ -1,8 +1,7 @@
-package game;
-
+import game.*;
 import userInterface.*;
 
-public class Application {
+public class VierGewinnt {
 
 	public static void main(String[] args) {
 
