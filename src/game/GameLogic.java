@@ -24,7 +24,7 @@ public class GameLogic implements GameInterface {
 	// METHODS
 	// -- Access
 	public void putAt(int pos) {
-		
+		this.gameBoard.throwAt(this.turn, pos);
 	}
 	
 	public Player getCurrentPlayer() {
@@ -36,7 +36,11 @@ public class GameLogic implements GameInterface {
 	}
 	
 	public boolean hasWinner() {
-		return false; // TODO implement such that no infinite loop occur
+		/*
+		 * TODO Returns true if the game has a winner else returns false. 
+		 */
+		
+		return false;
 	}
 	
 	public Player getWinner() {
@@ -46,6 +50,24 @@ public class GameLogic implements GameInterface {
 //		}
 		
 		return this.winner;
+	}
+
+
+	
+	public int getXsize() {
+		return this.gameBoard.getXsize();
+	}
+
+
+	
+	public int getYsize() {
+		return this.gameBoard.getYsize();
+	}
+
+
+	
+	public boolean isFullAt(int pos) {
+		return this.gameBoard.isFullAt(pos);
 	}
 	
 	// -- Implementation
