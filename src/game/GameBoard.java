@@ -6,7 +6,7 @@ public class GameBoard {
 	 */
 	
 	// ATTRIBUTES
-	private Player table[][];
+	private Cell table[][];
 	private int xsize, ysize;
 	
 	// CONSTRUCTOR
@@ -16,7 +16,13 @@ public class GameBoard {
 		this.xsize = xsize_;
 		this.ysize = ysize_;
 		
-		this.table = new Player[xsize_][ysize_];
+		this.table = new Cell[xsize_][ysize_];
+		// initialize the cells
+		for(int i=0;i<xsize_;i++) {
+			for(int j=0;j<ysize_;j++) {
+				this.table[i][j] = new Cell();
+			}
+		}
 		
 	}
 	
@@ -24,7 +30,7 @@ public class GameBoard {
 	// METHODS
 	// -- Access
 	public Player at(int xpos, int ypos) {
-		return this.table[xpos-1][ypos-1];
+		return this.table[xpos-1][ypos-1].getOwner();
 	}
 	
 	public int getXsize() {
@@ -46,11 +52,12 @@ public class GameBoard {
 		}
 		
 		int y = 0;
-		while(this.table[pos-1][y] != null) { // no need to check y<ysize since table at 'pos' is not full
+		while(this.table[pos-1][y].getOwner() != null) { // no need to check y<ysize since table at 'pos' is not full
 			y++;
 		}
 		
-		table[pos-1][y] = pl;
+		table[pos-1][y].setOwner(pl);
+		this.updateInLineAt(pos, y+1);
 		
 	}
 	
@@ -59,7 +66,7 @@ public class GameBoard {
 		 * Returns true iff GameBoard at position 'pos' is full. (first index is 1)
 		 */
 		
-		return this.table[pos-1][this.ysize-1] != null;
+		return this.table[pos-1][this.ysize-1].getOwner() != null;
 	}
 	
 	// -- Implementation
