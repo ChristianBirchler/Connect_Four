@@ -25,6 +25,7 @@ public class GameLogic implements GameInterface {
 	// -- Access
 	public void putAt(int pos) {
 		this.gameBoard.throwAt(this.turn, pos);
+		this.changeCurrentPlayer();
 	}
 	
 	public Player getCurrentPlayer() {
@@ -71,7 +72,19 @@ public class GameLogic implements GameInterface {
 	}
 	
 	// -- Implementation
-	
+	private void changeCurrentPlayer() {
+		/*
+		 * This method simply change the current player.
+		 */
+		
+		if(this.turn == this.player1) {
+			this.turn = this.player2;
+		}else if(this.turn == this.player2) {
+			this.turn = this.player1;
+		}else {
+			throw new Error("Change of player does not work properly!");
+		}
+	}
 	
 
 }
