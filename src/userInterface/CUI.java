@@ -55,7 +55,7 @@ public class CUI extends UI {
 		System.out.println(currentPl + " enter a position: ");
 		choice = this.input();
 		
-		while(!this.validInput(choice)) {
+		while(!this.game.validInput(choice)) {
 			System.out.println("Invalid input!\n" + currentPl + " enter a position: ");
 			choice = this.input();
 		}
@@ -74,16 +74,7 @@ public class CUI extends UI {
 		return n;
 	}
 	
-	private boolean validInput(int n) {
-		/*
-		 * This methods checks if 'n' is a valid position to throw a chip into the board.
-		 * If 0<'n'<=xsize then true else false.
-		 */
-		
-		int xsize = this.game.getXsize();
-		
-		return 0<n && n<=xsize && !this.game.isFullAt(n);
-	}
+	
 }
 
 

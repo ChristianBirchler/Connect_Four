@@ -6,6 +6,7 @@ public interface GameInterface {
 	public Player getCurrentPlayer();
 	public int getXsize();
 	public int getYsize();
-	public boolean isFullAt(int pos);
+	//public boolean isFullAt(int pos);
+	public boolean validInput(int pos);
 	
 }
