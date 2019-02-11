@@ -1,4 +1,4 @@
-# 4-Gwinnt
+# 4-Gewinnt
 This repository implements the game 4-Gewinnt. The rules of this came can be found at https://en.wikipedia.org/wiki/Connect_Four
 
 ## Developer's motivation
