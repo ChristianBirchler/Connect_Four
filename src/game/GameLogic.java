@@ -78,6 +78,23 @@ public class GameLogic implements GameInterface {
 		return 0<n && n<=xsize && !this.gameBoard.isFullAt(n);
 	}
 	
+	
+	public Player getPlayer1() {
+		return this.player1;
+	}
+
+
+	public Player getPlayer2() {
+		return this.player2;
+	}
+	
+	
+	public Player getPlayerAt(int xpos, int ypos) {
+		return this.gameBoard.at(xpos, ypos);
+	}
+	
+	
+	
 	// -- Implementation
 	private void changeCurrentPlayer() {
 		/*
@@ -92,6 +109,8 @@ public class GameLogic implements GameInterface {
 			throw new Error("Change of player does not work properly!");
 		}
 	}
+
+
 	
 
 }
