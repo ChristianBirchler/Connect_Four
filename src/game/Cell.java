@@ -29,7 +29,7 @@ public class Cell {
 		return this.inLine;
 	}
 	
-	public void increaseInLine() {
+	public void incrInLine() {
 		this.inLine++;
 	}
 	
