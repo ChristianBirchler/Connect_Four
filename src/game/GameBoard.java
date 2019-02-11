@@ -6,7 +6,7 @@ public class GameBoard {
 	 */
 	
 	// ATTRIBUTES
-	Player table[][];
+	private Player table[][];
 	private int xsize, ysize;
 	
 	// CONSTRUCTOR
@@ -23,6 +23,10 @@ public class GameBoard {
 	
 	// METHODS
 	// -- Access
+	public Player at(int xpos, int ypos) {
+		return this.table[xpos-1][ypos-1];
+	}
+	
 	public int getXsize() {
 		return this.xsize;
 	}
