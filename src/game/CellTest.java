@@ -79,7 +79,7 @@ class CellTest {
 	@Test
 	void testSetInLine() {
 		
-Cell testCell = new Cell();
+		Cell testCell = new Cell();
 		
 		testCell.setInLine("vertical", 1);
 		testCell.setInLine("horizontal", 2);
