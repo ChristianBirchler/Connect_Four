@@ -23,7 +23,32 @@ class GameBoardTest {
 
 	@Test
 	void testAt() {
-		fail("Not yet implemented");
+		
+		Player pl1 = new Player("Me");
+		Player pl2 = new Player("You");
+		GameBoard gb = new GameBoard(5, 5);
+		
+		gb.throwAt(pl1, 1);
+		assertEquals(pl1, gb.at(1, 1), "pl1 should be at (1,1).");
+		
+		gb.throwAt(pl1, 1);
+		gb.throwAt(pl1, 1);
+		gb.throwAt(pl1, 1);
+		gb.throwAt(pl2, 1);
+		assertEquals(pl2, gb.at(1, 5), "pl2 should be at (1,5)");
+		
+		gb.throwAt(pl2, 5);
+		gb.throwAt(pl2, 5);
+		gb.throwAt(pl2, 5);
+		gb.throwAt(pl2, 5);
+		gb.throwAt(pl2, 5);
+		assertEquals(pl2, gb.at(5, 5), "pl2 should be at (5,5)");
+		
+		assertThrows(IllegalArgumentException.class, () -> {gb.throwAt(pl2, 1);});
+		assertThrows(IllegalArgumentException.class, () -> {gb.throwAt(pl2, 5);});
+			
+		
+				
 	}
 
 	@Test
