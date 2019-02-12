@@ -11,7 +11,9 @@ public class GameBoard {
 	
 	// CONSTRUCTOR
 	public GameBoard(int xsize_, int ysize_) {
-		assert xsize_>=4 && ysize_>=4 : "Invalid board size!";
+		if(xsize_<4 || ysize_<4) {
+			throw new IllegalArgumentException("Invalid board size!");
+		}
 		
 		this.xsize = xsize_;
 		this.ysize = ysize_;
@@ -44,11 +46,12 @@ public class GameBoard {
 	public void throwAt(Player pl, int pos) {
 		/*
 		 * Player 'pl' throws his chip at 'pos' into the board.
+		 * The position must initially not be full!
 		 */
 		
 		// PRECONDITION
 		if(this.isFullAt(pos)) {
-			throw new Error();
+			throw new IllegalArgumentException();
 		}
 		
 		int y = 0;
@@ -65,6 +68,9 @@ public class GameBoard {
 		/*
 		 * Returns true iff GameBoard at position 'pos' is full. (first index is 1)
 		 */
+		if(pos<1 || pos>this.xsize) {
+			throw new IllegalArgumentException();
+		}
 		
 		return this.table[pos-1][this.ysize-1].getOwner() != null;
 	}
