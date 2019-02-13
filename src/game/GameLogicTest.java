@@ -119,10 +119,6 @@ class GameLogicTest {
 		
 	}
 
-	@Test
-	void testGetGameBoard() {
-		fail("Not yet implemented");
-	}
 
 	@Test
 	void testHasWinner() {
@@ -134,30 +130,13 @@ class GameLogicTest {
 		fail("Not yet implemented");
 	}
 
-	@Test
-	void testGetXsize() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetYsize() {
-		fail("Not yet implemented");
-	}
 
 	@Test
 	void testValidInput() {
 		fail("Not yet implemented");
 	}
 
-	@Test
-	void testGetPlayer1() {
-		fail("Not yet implemented");
-	}
 
-	@Test
-	void testGetPlayer2() {
-		fail("Not yet implemented");
-	}
 
 	@Test
 	void testGetPlayerAt() {
