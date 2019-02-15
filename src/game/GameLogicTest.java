@@ -414,9 +414,5 @@ class GameLogicTest {
 
 
 
-	@Test
-	void testGetPlayerAt() {
-		fail("Not yet implemented");
-	}
 
 }
