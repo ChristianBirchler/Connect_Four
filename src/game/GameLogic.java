@@ -46,9 +46,9 @@ public class GameLogic implements GameInterface {
 	
 	public Player getWinner() {
 		// PRECONDITIOM
-//		if(this.winner == null) {
-//			throw new NullPointerException("Winner is not properly set!");
-//		}
+		if(this.winner == null) {
+			throw new NullPointerException("Winner is not properly set!");
+		}
 		
 		return this.winner;
 	}
