@@ -13,7 +13,7 @@ public class ConnectFour {
 		String name2 = "Victor";
 		// Board size
 		int xsize = 7;
-		int ysize = 7;
+		int ysize = 6;
 		
 		
 		// BUILDING DATA STRUCTURES
