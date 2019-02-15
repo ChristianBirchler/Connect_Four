@@ -1,7 +1,7 @@
 import game.*;
 import userInterface.*;
 
-public class VierGewinnt {
+public class ConnectFour {
 
 	public static void main(String[] args) {
 
