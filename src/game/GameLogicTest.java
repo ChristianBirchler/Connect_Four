@@ -244,7 +244,137 @@ class GameLogicTest {
 
 	@Test
 	void testGetWinner() {
-		fail("Not yet implemented");
+
+		Player pl1 = new Player("Me");
+		Player pl2 = new Player("You");
+		GameBoard gb = new GameBoard(5, 5);
+		GameLogic gl = new GameLogic(pl1,pl2,gb);
+		
+		
+		assertNull(gl.getWinner(), "Winner must be null by instantiation of a game logic!");
+		
+		// horizontal
+		gl.putAt(1);
+		gl.putAt(1);
+		assertNull(gl.getWinner(), "During game winner must be null!");
+		gl.putAt(2);
+		gl.putAt(1);
+		gl.putAt(3);
+		assertNull(gl.getWinner(), "During game winner must be null!");
+		gl.putAt(2);
+		gl.putAt(4);
+
+		assertEquals(pl1, gl.getWinner(), "Player 1 should be the winner!");
+		
+		// garbage collecting the old objects
+		pl1 = null;
+		pl2 = null;
+		gb = null;
+		gl = null;
+		
+		
+		pl1 = new Player("Me");
+		pl2 = new Player("You");
+		gb = new GameBoard(5, 5);
+		gl = new GameLogic(pl1,pl2,gb);
+		
+		assertNull(gl.getWinner(), "Winner must be null by instantiation of a game logic!");
+		
+		// vertical
+		gl.putAt(1);
+		gl.putAt(3);
+		assertNull(gl.getWinner(), "During game winner must be null!");
+		gl.putAt(2);
+		gl.putAt(3);
+		assertNull(gl.getWinner(), "During game winner must be null!");
+		gl.putAt(4);
+		gl.putAt(3);
+		gl.putAt(1);
+		assertNull(gl.getWinner(), "During game winner must be null!");
+		gl.putAt(3);
+		
+		assertEquals(pl2, gl.getWinner(), "Player 2 should be the winner!");
+		
+		
+		// garbage collecting the old objects
+		pl1 = null;
+		pl2 = null;
+		gb = null;
+		gl = null;
+		
+		
+		pl1 = new Player("Me");
+		pl2 = new Player("You");
+		gb = new GameBoard(5, 5);
+		gl = new GameLogic(pl1,pl2,gb);
+		
+		assertNull(gl.getWinner(), "Winner must be null by instantiation of a game logic!");
+
+		
+		// diagonal up
+		gl.putAt(2);
+		gl.putAt(3);
+		assertNull(gl.getWinner(), "During game winner must be null!");
+		gl.putAt(3);
+		gl.putAt(3);
+		gl.putAt(4);
+		assertNull(gl.getWinner(), "During game winner must be null!");
+		gl.putAt(4);
+		gl.putAt(4);
+		gl.putAt(4);
+		gl.putAt(5);
+		gl.putAt(5);
+		assertNull(gl.getWinner(), "During game winner must be null!");
+		gl.putAt(5);
+		gl.putAt(5);
+		gl.putAt(3);
+		gl.putAt(1);
+		assertNull(gl.getWinner(), "During game winner must be null!");
+		gl.putAt(4);
+		gl.putAt(5);
+		gl.putAt(3);
+		assertNull(gl.getWinner(), "During game winner must be null!");
+		gl.putAt(2);
+		
+		assertEquals(pl2, gl.getWinner(), "Player 2 should be the winner!");
+		
+		
+		
+		// garbage collecting the old objects
+		pl1 = null;
+		pl2 = null;
+		gb = null;
+		gl = null;
+		
+		
+		pl1 = new Player("Me");
+		pl2 = new Player("You");
+		gb = new GameBoard(5, 5);
+		gl = new GameLogic(pl1,pl2,gb);
+		
+		assertNull(gl.getWinner(), "Winner must be null by instantiation of a game logic!");
+
+		
+		// diagonal down
+		gl.putAt(1);
+		gl.putAt(1);
+		gl.putAt(1);
+		assertNull(gl.getWinner(), "During game winner must be null!");
+		gl.putAt(2);
+		gl.putAt(1);
+		gl.putAt(2);
+		assertNull(gl.getWinner(), "During game winner must be null!");
+		gl.putAt(4);
+		gl.putAt(3);
+		assertNull(gl.getWinner(), "During game winner must be null!");
+		gl.putAt(3);
+		gl.putAt(4);
+		assertNull(gl.getWinner(), "During game winner must be null!");
+		gl.putAt(2);
+		
+		assertEquals(pl1, gl.getWinner(), "Player 1 should be the winner!");
+		
+		
 	}
 
 
