@@ -122,7 +122,124 @@ class GameLogicTest {
 
 	@Test
 	void testHasWinner() {
-		fail("Not yet implemented");
+		
+		Player pl1 = new Player("Me");
+		Player pl2 = new Player("You");
+		GameBoard gb = new GameBoard(5, 5);
+		GameLogic gl = new GameLogic(pl1,pl2,gb);
+		
+		// horizontal
+		gl.putAt(1);
+		gl.putAt(1);
+		gl.putAt(2);
+		gl.putAt(1);
+		gl.putAt(3);
+		gl.putAt(2);
+		gl.putAt(4);
+		
+		assertTrue(gl.hasWinner(), "Player 1 should wind with four connect in the bottom row!");
+		
+		// garbage collecting the old objects
+		pl1 = null;
+		pl2 = null;
+		gb = null;
+		gl = null;
+		
+		
+		pl1 = new Player("Me");
+		pl2 = new Player("You");
+		gb = new GameBoard(5, 5);
+		gl = new GameLogic(pl1,pl2,gb);
+		
+		// vertical
+		gl.putAt(1);
+		gl.putAt(3);
+		assertFalse(gl.hasWinner());
+		gl.putAt(2);
+		gl.putAt(3);
+		assertFalse(gl.hasWinner());
+		gl.putAt(4);
+		gl.putAt(3);
+		gl.putAt(1);
+		assertFalse(gl.hasWinner());
+		gl.putAt(3);
+		
+		assertTrue(gl.hasWinner(), "Player 2 should win with a vertical line at column 3!");
+		
+		
+		// garbage collecting the old objects
+		pl1 = null;
+		pl2 = null;
+		gb = null;
+		gl = null;
+		
+		
+		pl1 = new Player("Me");
+		pl2 = new Player("You");
+		gb = new GameBoard(5, 5);
+		gl = new GameLogic(pl1,pl2,gb);
+		
+		// diagonal up
+		gl.putAt(2);
+		gl.putAt(3);
+		assertFalse(gl.hasWinner());
+		gl.putAt(3);
+		gl.putAt(3);
+		gl.putAt(4);
+		assertFalse(gl.hasWinner());
+		gl.putAt(4);
+		gl.putAt(4);
+		gl.putAt(4);
+		gl.putAt(5);
+		gl.putAt(5);
+		assertFalse(gl.hasWinner());
+		gl.putAt(5);
+		gl.putAt(5);
+		gl.putAt(3);
+		gl.putAt(1);
+		assertFalse(gl.hasWinner());
+		gl.putAt(4);
+		gl.putAt(5);
+		gl.putAt(3);
+		assertFalse(gl.hasWinner());
+		gl.putAt(2);
+		
+		assertTrue(gl.hasWinner(), "Player 2 should win with a 5 connected diagonal up line!");
+		
+		
+		
+		// garbage collecting the old objects
+		pl1 = null;
+		pl2 = null;
+		gb = null;
+		gl = null;
+		
+		
+		pl1 = new Player("Me");
+		pl2 = new Player("You");
+		gb = new GameBoard(5, 5);
+		gl = new GameLogic(pl1,pl2,gb);
+		
+		// diagonal down
+		gl.putAt(1);
+		gl.putAt(1);
+		gl.putAt(1);
+		assertFalse(gl.hasWinner());
+		gl.putAt(2);
+		gl.putAt(1);
+		gl.putAt(2);
+		assertFalse(gl.hasWinner());
+		gl.putAt(4);
+		gl.putAt(3);
+		assertFalse(gl.hasWinner());
+		gl.putAt(3);
+		gl.putAt(4);
+		assertFalse(gl.hasWinner());
+		gl.putAt(2);
+		
+		assertTrue(gl.hasWinner(), "Player 1 should win with a donwwards diagonal!");
+		
+		
 	}
 
 	@Test
