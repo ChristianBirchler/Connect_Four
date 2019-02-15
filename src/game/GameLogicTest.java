@@ -380,7 +380,36 @@ class GameLogicTest {
 
 	@Test
 	void testValidInput() {
-		fail("Not yet implemented");
+		
+		Player pl1 = new Player("Me");
+		Player pl2 = new Player("You");
+		GameBoard gb = new GameBoard(5, 5);
+		GameLogic gl = new GameLogic(pl1,pl2,gb);
+	
+		assertTrue(gl.validInput(1), "1 should be valid!");
+		assertTrue(gl.validInput(3), "3 should be valid!");
+		assertTrue(gl.validInput(5), "5 should be valid!");
+		
+		assertFalse(gl.validInput(0), "Indices of positions start with 1!");
+		assertFalse(gl.validInput(-2), "Negativ values are invalid positions!");
+		assertFalse(gl.validInput(6), "Larger than xsize is an invalid position!");
+		
+		for(int i=0;i<5;i++) {
+			gl.putAt(1);
+		}
+		assertFalse(gl.validInput(1), "Column 1 should be full!");
+		
+		for(int i=0;i<5;i++) {
+			gl.putAt(3);
+		}
+		assertFalse(gl.validInput(3), "Column 3 should be full!");
+		
+		for(int i=0;i<5;i++) {
+			gl.putAt(5);
+		}
+		assertFalse(gl.validInput(5), "Column 5 should be full!");
+		
+		
 	}
 
 
