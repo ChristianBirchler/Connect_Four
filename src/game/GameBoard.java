@@ -77,8 +77,11 @@ public class GameBoard {
 	
 	// -- Implementation
 	private void updateInLineAt(int xpos, int ypos) {
+		
+		// TODO!!!!
+		
 		/*
-		 * This method updates the 'inline' property of the cell at (xpos,ypos).
+		 * This method updates the 'inline' property of the cell at (xpos,ypos). (Indices start with 1!)
 		 */
 	}
 
