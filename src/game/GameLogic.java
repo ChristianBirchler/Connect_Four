@@ -37,9 +37,8 @@ public class GameLogic implements GameInterface {
 	}
 	
 	public boolean hasWinner() {
-		/*
-		 * TODO Returns true if the game has a winner else returns false. 
-		 */
+		
+//		return this.winner != null;
 		
 		return false;
 	}
